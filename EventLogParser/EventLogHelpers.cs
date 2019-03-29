@@ -126,7 +126,7 @@ namespace EventLogParser
                                 {
                                     Console.WriteLine("[+] Regex Context:");
                                     int printed = 0;
-                                    for (int j = 1; i - j > 0 && printed <= context; j++)
+                                    for (int j = 1; i - j > 0 && printed < context; j++)
                                     {
                                         if (scriptBlockParts[i - j].Trim() != "")
                                         {
@@ -136,7 +136,7 @@ namespace EventLogParser
                                     }
                                     printed = 0;
                                     Console.WriteLine("\t{0}", m.Value.Trim());
-                                    for (int j = 1; printed <= context && i + j < scriptBlockParts.Length; j++)
+                                    for (int j = 1; printed < context && i + j < scriptBlockParts.Length; j++)
                                     {
                                         if (scriptBlockParts[i + j].Trim() != "")
                                         {

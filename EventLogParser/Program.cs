@@ -42,14 +42,18 @@ Arguments:
 
     Optional:
    
+        context - Number of lines surrounding the ""interesting"" regex matches.
+                  Only applies to 4104 events. Default is 3.
+
         outfile - Path to the file you wish to write all matching script block logs
                   to. This only applies to event ID 4104.
 
 Example:
 
-    .\EventLogParser.exe eventid=4104 outfile=C:\Windows\Temp\scripts.txt
+    .\EventLogParser.exe eventid=4104 outfile=C:\Windows\Temp\scripts.txt context=5
 
         Writes all 4104 events with ""sensitive"" information to C:\Windows\Temp\scripts.txt
+        and prints 5 lines before and after the matching line.
 
     .\EventLogParser.exe eventid=4103
         
